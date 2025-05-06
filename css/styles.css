@@ -27,6 +27,9 @@ body {
   background-color: var(--white);
   margin: auto;
 }
+/* body.modal-open {
+  overflow: hidden;
+} */
 h1,
 h2,
 h3 {
@@ -664,7 +667,7 @@ fieldset {
   color: var(--white);
   border: 1px solid var(--white);
   border-radius: 4px;
-  width: 264px;
+  width: 288px;
   height: 40px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
   opacity: 0.3;
@@ -732,17 +735,26 @@ fieldset {
   .ftr-form {
     flex-direction: row;
   }
+  .ftr-email {
+    width: 264px;
+  }
 }
 
 @media screen and (min-width: 1158px) {
+  .ftr {
+    justify-content: center;
+  }
   .ftr-cntr {
-    flex-direction: row;
+    padding: 0;
   }
   .ftr-logo-cntr {
     margin-right: 120px;
   }
   .ftr-soc-cntr {
-    margin-right: 80px;
+    margin-right: 30px;
+  }
+  .ftr-form {
+    gap: 24px;
   }
 }
 
@@ -762,6 +774,7 @@ fieldset {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+  z-index: 998;
 }
 .mobile-menu.is-open {
   opacity: 1;
@@ -872,7 +885,7 @@ fieldset {
 }
 /* end mobile menu */
 
-/* start overlay */
+/* start mobile overlay */
 .backdrop {
   position: fixed;
   top: 0;
@@ -898,8 +911,8 @@ fieldset {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 408px;
-  min-height: 584px;
+  width: 288px;
+  min-height: 623px;
   border-radius: 4px;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12),
     0 2px 1px 0 rgba(0, 0, 0, 0.2);
@@ -954,7 +967,8 @@ fieldset {
   margin-bottom: 8px;
 }
 .backdrop-lable {
-  display: block;
+  display: flex;
+  flex-shrink: 0;
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 12px;
@@ -1076,5 +1090,20 @@ input:checked + label .backdrop-checkmark {
 .backdrop-button:hover,
 .backdrop-button:focus {
   background-color: var(--ocean);
+}
+.backdrop-txt-cntr {
+  display: flex;
+  flex-direction: column;
+}
+/* end mobile overlay */
+
+/* start overlay tab+desk*/
+@media screen and (min-width: 768px) {
+  .modal {
+    width: 408px;
+  }
+  .backdrop-txt-cntr {
+    display: inline-block;
+  }
 }
 /* end overlay */
