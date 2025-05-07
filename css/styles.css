@@ -89,6 +89,9 @@ button {
 input {
   font-family: inherit;
 }
+address {
+  font-style: normal;
+}
 fieldset {
   padding: 0;
   margin: 0;
@@ -159,6 +162,18 @@ fieldset {
   display: block;
   fill: #2f2f37;
 }
+.mail-tel {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: var(--slate);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mail-tel:hover,
+.mail-tel:focus {
+  color: var(--ocean);
+}
 
 @media screen and (min-width: 768px) {
   .header-container {
@@ -214,15 +229,12 @@ fieldset {
     margin-top: 16px;
   }
   .mail-tel {
+    font-weight: 400;
     font-size: 12px;
     line-height: 1.17;
     letter-spacing: 0.04em;
     color: var(--slate);
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  .mail-tel:hover,
-  .mail-tel:focus {
-    color: var(--ocean);
   }
 }
 
